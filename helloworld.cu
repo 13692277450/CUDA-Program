@@ -8,10 +8,10 @@ __global__ void hellFromGPU()
 int main()
 {
     // Launch the kernel
-    hellFromGPU<<<1, 1>>>();
+    hellFromGPU<<<1, 10>>>();
 
     // Wait for the GPU to finish before accessing on host
-    cudaDeviceSynchronize();
+    cudaDeviceReset();
 
     return 0;
 }
